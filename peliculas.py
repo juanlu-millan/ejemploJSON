@@ -5,6 +5,7 @@ from funciones import peliculainfo
 from funciones import peliculaactores
 from funciones import peliculasfrase
 from funciones import peliculasactor
+from funciones import fechapeli
 
 while (True):
     print('''
@@ -39,11 +40,18 @@ while (True):
 
         # Mostrar las películas en las que ha trabajado un actor dado.
     elif opcion == 4:
-        actor = input("Dime un actor:")
-
+        actor = input("Dime un actor para decirte sus apariciones:")
+        print ("")
         for pelis in peliculasactor(doc,actor):
-            print (pelis)
+            print ("-",pelis)
 
+        # Mostrar el título y la url del póster de las tres películas con una media de puntuaciones más alta y lanzadas entre dos fechas dadas.
+    elif opcion == 5:
+        fechasinicio = input("Dime una fecha de inicio:")
+        fechasfin = input("Dime una fecha de fin:")
+
+        for peli,poster in fechapeli(doc,fechasinicio,fechasfin):
+            print (peli,poster)
     elif opcion == 0:
         break;
     else:

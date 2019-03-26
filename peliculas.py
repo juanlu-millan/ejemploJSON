@@ -3,6 +3,7 @@ with open("movies.json") as fichero:
     doc=json.load(fichero)
 from funciones import peliculainfo
 from funciones import peliculaactores
+from funciones import peliculasfrase
 
 while (True):
     print('''
@@ -27,6 +28,12 @@ while (True):
             print ("_"*50)
             print ("Titulo:",titulo,"Nº de Actores:",actores)
 
+        # Mostrar las películas que contengan en la sinopsis dos palabras dadas.
+    elif opcion == 3:
+        palabra1 = input("Dime una palabra:")
+        palabra2 = input("Dime segunda palabra:")
+        for titulo in peliculaactores(doc):
+            print (titulo)
     elif opcion == 0:
         break;
     else:

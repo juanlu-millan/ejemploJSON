@@ -36,10 +36,11 @@ def peliculasactor(doc,actor):
 def fechapeli(doc,fechasinicio,fechasfin):
     toppuntos = []
     peliculasfecha = []
+    fechainicio = fechasinicio.replace("-","")
+    fechafin = fechasfin.replace("-","")
+    
     for i in doc:
         fechapeli = i["releaseDate"].replace("-","")
-        fechainicio = fechasinicio.replace("-","")
-        fechafin = fechasfin.replace("-","")
         if fechainicio < fechapeli and fechapeli < fechafin:
             puntuacion = sum(i["ratings"])/len(i["ratings"])
             peliculasfecha.append([i["title"],sum(i["ratings"])/len(i["ratings"]),i["posterurl"]])
@@ -54,4 +55,4 @@ def fechapeli(doc,fechasinicio,fechasfin):
             if puntos == pelistop[1]:
                 pelifinal.append(pelistop[0])
                 posterfinal.append(pelistop[2])
-    return zip (pelifinal,posterfinal)
+    return zip (pelifinal[0:3],posterfinal[0:3])

@@ -35,6 +35,7 @@ while (True):
     elif opcion == 3:
         palabra1 = input("Dime una palabra:")
         palabra2 = input("Dime segunda palabra:")
+        print ("Pelis sobre",palabra1,"y",palabra2)
         for titulo in peliculasfrase(doc,palabra1,palabra2):
             print (titulo)
 
@@ -47,11 +48,12 @@ while (True):
 
         # Mostrar el título y la url del póster de las tres películas con una media de puntuaciones más alta y lanzadas entre dos fechas dadas.
     elif opcion == 5:
-        fechasinicio = input("Dime una fecha de inicio:")
-        fechasfin = input("Dime una fecha de fin:")
+        fechasinicio = input("Dime una fecha de inicio (AAAA-MM-DD):")
+        fechasfin = input("Dime una fecha de fin (AAAA-MM-DD):")
 
         for peli,poster in fechapeli(doc,fechasinicio,fechasfin):
-            print (peli,poster)
+            print ("Titulo:",peli," Póster",poster)
+            print ("")
     elif opcion == 0:
         break;
     else:

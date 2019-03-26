@@ -20,6 +20,12 @@ while (True):
             print ("Titulo:",titulo,"Año:",year,"Duración:",duracion)
             print ("")
 
+    elif opcion==2:
+        # Mostrar los títulos de las películas y el número de actores/actrices que tiene cada una.
+        for titulo,actores in peliculainfo(doc):
+            print ("_"*50)
+            print ("Titulo:",titulo,"Nº de Actores:",actores)
+
     elif opcion == 0:
         break;
     else:

@@ -30,4 +30,4 @@ def peliculasactor(doc,actor):
     for i in doc:
         for a in i["actors"]:
             if a == actor:
-                listaactor(i["title"])
+                listaactor.append(i["title"])

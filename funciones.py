@@ -31,3 +31,4 @@ def peliculasactor(doc,actor):
         for a in i["actors"]:
             if a == actor:
                 listaactor.append(i["title"])
+    return listaactor

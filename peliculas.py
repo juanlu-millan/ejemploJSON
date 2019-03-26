@@ -2,6 +2,7 @@ import json
 with open("movies.json") as fichero:
     doc=json.load(fichero)
 from funciones import peliculainfo
+from funciones import peliculaactores
 
 while (True):
     print('''
@@ -22,7 +23,7 @@ while (True):
 
     elif opcion==2:
         # Mostrar los títulos de las películas y el número de actores/actrices que tiene cada una.
-        for titulo,actores in peliculainfo(doc):
+        for titulo,actores in peliculaactores(doc):
             print ("_"*50)
             print ("Titulo:",titulo,"Nº de Actores:",actores)
 

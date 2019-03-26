@@ -18,8 +18,16 @@ def peliculaactores(doc):
         listaactores.append(len(i["actors"]))
     return zip (listapelis,listaactores)
 
-def peliculasfrase(doc):
+def peliculasfrase(doc,palabrauno,palabrados):
     listafrase = []
     for i in doc:
-        if palabra1 and palabra2 in i["storyline"]:
-            listafrase.appendi(i["title"])
+        if palabrauno and palabrados in i["storyline"]:
+            listafrase.append(i["title"])
+    return listafrase
+
+def peliculasactor(doc,actor):
+    listaactor = []
+    for i in doc:
+        for a in i["actors"]:
+            if a == actor:
+                listaactor(i["title"])

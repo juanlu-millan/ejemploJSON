@@ -38,12 +38,12 @@ def fechapeli(doc,fechasinicio,fechasfin):
     peliculasfecha = []
     fechainicio = fechasinicio.replace("-","")
     fechafin = fechasfin.replace("-","")
-    
+
     for i in doc:
         fechapeli = i["releaseDate"].replace("-","")
-        if fechainicio < fechapeli and fechapeli < fechafin:
+        if fechainicio <= fechapeli and fechapeli <= fechafin:
             puntuacion = sum(i["ratings"])/len(i["ratings"])
-            peliculasfecha.append([i["title"],sum(i["ratings"])/len(i["ratings"]),i["posterurl"]])
+            peliculasfecha.append([i["title"],round(sum(i["ratings"])/len(i["ratings"]),2),i["posterurl"]])
             toppuntos.append(round(puntuacion,2))
             puntosordenados = sorted(toppuntos)
             puntosordenados.reverse()
